@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc Mừng 20/10</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <p>Em mãi là bông hoa đẹp nhất trong lòng anh! Chúc em luôn cười tươi, hạnh phúc và thành công. 🌸</p>
+
+        <div class="images">
+            <img src="./2.jpg" alt="Kỷ niệm 1" class="animate__animated animate__fadeIn" />
+            <img src="./1.jpg" alt="Kỷ niệm 2" class="animate__animated animate__fadeIn" />
+            <img src="./3.jpg" alt="Kỷ niệm 3" class="animate__animated animate__fadeIn" />
+        </div>
+        <a href="banner/banner.html" class="btn">Nhấn vào đây để nhận lời chúc đặc biệt</a>
+    </div>
+
+    <div class="heart-container"></div>
+
+    <script>
+
+
+        const btn = document.getElementById('btn-reveal');
+        btn.addEventListener('click', () => {
+            message.classList.toggle('hidden');
+            btn.textContent = message.classList.contains('hidden')
+                ? 'Nhấn vào đây để nhận lời chúc đặc biệt 🌷'
+                : 'Ẩn lời chúc 💌';
+        });
+
+        const heartContainer = document.querySelector('.heart-container');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+            heartContainer.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+</body>
+
+</html>

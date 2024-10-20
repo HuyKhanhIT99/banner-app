@@ -1,0 +1,78 @@
+body {
+    background-color: #fce4ec;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    /* Ẩn thanh cuộn ngang */
+}
+
+.banner {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #f48fb1;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    color: #d81b60;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.photos {
+    display: flex;
+    justify-content: start;
+    animation: slideImages 10s linear infinite;
+    /* Thêm animation cho hình ảnh */
+}
+
+@keyframes slideImages {
+    0% {
+        transform: translateX(0);
+    }
+
+    /* Bắt đầu từ vị trí ban đầu */
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Di chuyển sang trái */
+}
+
+.photos img {
+    width: 40%;
+    /* Điều chỉnh kích thước ảnh */
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+}
+
+.thank-you {
+    font-size: 1.5em;
+    color: #4a4a4a;
+    margin-top: 20px;
+    font-style: italic;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Animation cho văn bản fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

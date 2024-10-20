@@ -1,0 +1,121 @@
+body {
+    background-color: #fce4ec;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    /* Ẩn thanh cuộn ngang */
+}
+
+.banner {
+    max-width: 700px;
+    max-height: 1024px;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #f48fb1;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+h1 {
+    color: #d81b60;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.photos {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Ẩn phần hình ảnh ngoài vùng nhìn thấy */
+    height: 400px;
+    /* Chiều cao của vùng chứa hình ảnh */
+}
+
+.photos img {
+    width: 40%;
+    /* Giữ nguyên kích thước ảnh */
+    height: 100%;
+    /* Đặt chiều cao 100% của vùng chứa */
+    max-height: 100%;
+    /* Đảm bảo không vượt quá chiều cao của vùng chứa */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    /* Để xếp chồng các ảnh lên nhau */
+    opacity: 0;
+    /* Ẩn ảnh */
+    transition: opacity 1s ease;
+    /* Hiệu ứng chuyển tiếp */
+}
+
+.photos img.active {
+    opacity: 1;
+    /* Hiện ảnh đang hoạt động */
+}
+
+.thank-you {
+    font-size: 1.5em;
+    color: #4a4a4a;
+    margin-top: 20px;
+    font-style: italic;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Các mã CSS trước đó */
+
+#heartContainer {
+    position: fixed;
+    top: 0;
+    left: 1%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Không cho phép tương tác với vùng này */
+    overflow: hidden;
+    /* Ẩn những phần trái tim ra ngoài */
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    /* Kích thước trái tim */
+    height: 30px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /* Hình dạng trái tim */
+    opacity: 0.8;
+    /* Độ trong suốt */
+    animation: fall 5s linear forwards;
+    /* Hiệu ứng rơi */
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        /* Bắt đầu ở trên cùng */
+        transform: translateX(0);
+    }
+
+    100% {
+        top: 100%;
+        /* Kết thúc ở dưới cùng */
+        transform: translateX(30px);
+        /* Có thể thay đổi hướng rơi */
+    }
+}
+
+
+/* Animation cho văn bản fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
